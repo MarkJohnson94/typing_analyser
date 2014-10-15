@@ -1,4 +1,9 @@
 typing_analyser
 ===============
 
-Provides information such as word count, average words per minute, and peak words per minute typed.
+Simple command-line program which provides information such as word count, time and average and peak words per minute.
+
+Only takes input for processing when user presses enter button.
+
+Licence:
+Feel free to use as you like
