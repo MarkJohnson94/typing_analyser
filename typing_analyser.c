@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #define _USE_32BIT_TIME_T 1 //to fix minGW bug http://sourceforge.net/p/mingw/bugs/2152/
 #include <stdio.h>
 #include <time.h>
@@ -21,8 +20,6 @@ Takes a linked list and a data value.
 Creates a new link and pushes the data onto this link
 Links to the current head of the linked list
 and then makes itself the head of the linked list.
-Allows us to add data to the linked list quickly
-as we never have to traverse the list to add a data item.
 */
 void Push(struct input** headRef, double elapsedTime) {
 	struct input* newNode = malloc(sizeof(struct input));
@@ -30,15 +27,6 @@ void Push(struct input** headRef, double elapsedTime) {
 	newNode->next = *headRef; // The '*' to dereferences back to the real head
 	*headRef = newNode; // ditto
 }
-
-/*void printList(struct input* head)
-{
-do
-{
-printf("%d\n", head->time);
-head = head->next;
-} while (head != NULL);
-}*/
 
 /*
 Build the linked list in the heap and store
@@ -57,24 +45,11 @@ struct input* BuildLinkedList() {
 Given a linked list head pointer, compute
 and return the number of nodes in the list.
 */
-/*int Length() {
-struct input* current = inputLL;
-int count = 0;
-while (current != NULL) {
-count++;
-current = current->next;
-}
-return count;
-}*/
 
 void createLinkedList() {
 	inputLL = BuildLinkedList();
 }
 
-/*int totalWords()
-{
-return (Length()-1);
-}*/
 
 /*takes the number of words the user has input, and the time period for the average to be taken in seconds
 * if you wanted the average words per minute, you would pass the value 60 as the period variable.
